@@ -1,0 +1,20 @@
+<mvc:View
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Text text="Hello World"/>
+</mvc:View>
+
+<!-- UI를 index.html 파일에만 넣어 개발하면 유지보수에 어려움이 있다.
+sap.m.Text 컨트롤을 전용 뷰에 배치하여 모듈로 만듬.
+
+xmlns를 통해 sap.m을 참조하여 sap에서 제공되는 UI를 참조 한다.
+이전에 썼던 openUI5 뷰가 아닌 MVC(model-view-controller)가 있는 mvc를 사용하고 sap.ui.core.mvc라는 namespace를 정의한다.
+그리고 뷰태그 안에 Text 컨트롤을 추가한다.
+XML 태그는 컨트롤에 매핑되고 속성은 컨트롤의 속성에 매핑된다. 
+
+
+****
+이 단계부터 웹 서버에서 앱을 실행해야 한다. 로컬 파일에서 로드 된 여러 파일로 응용 프로그램을 구성한다.
+웹 서버가 없으면 보안상의 이유로 브라우저에서 이를 방지 할 수 있다. 브라우저의 개발자 도구에 "sap is not defined"라는 오류 메시지가 나타나면 bootstrap의 리소스 경로를 확인한다.
+****
+-->
