@@ -1,0 +1,32 @@
+<mvc:View
+   controllerName="sap.ui.demo.walkthrough.controller.HelloPanel"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
+   <Panel
+      headerText="{i18n>helloPanelTitle}"
+      class="sapUiResponsiveMargin"
+      width="auto" >
+      <content>
+      <Button
+         id="helloDialogButton"
+         text="{i18n>openDialogButtonText}"
+         press=".onOpenDialog"
+         class="sapUiSmallMarginEnd"/>
+
+      <Button
+         text="{i18n>showHelloButtonText}"
+         press=".onShowHello"
+         class="myCustomButton"/>
+      <Input
+         value="{/recipient/name}"
+         valueLiveUpdate="true"
+         width="60%"/>
+      <FormattedText
+         htmlText="Hello {/recipient/name}"
+         class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+      </content>
+   </Panel>
+</mvc:View>
+
+<!-- Dialog를 열기 위해 view에 새로운 버튼 태그 추가하고 , 이벤트 핸들러를 통해 함수를 호출한다. 이는 HelloPanel.controller.js 에 정의되어 있는 함수이고 id="helloDialogButton"가 필요하다.
+정의된 onOpenDialog 함수가 실행되면 HelloDialog.fragment.xml의 dialog 컨트롤에 id인 helloDialog를 통해 접근한다. -->

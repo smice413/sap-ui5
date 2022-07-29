@@ -1,0 +1,37 @@
+<mvc:View
+   controllerName="sap.ui.demo.walkthrough.controller.App"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc"
+   displayBlock="true">
+   <Shell>
+   <App class="myAppDemoWT">
+   <pages>
+   <Page title="{i18n>homePageTitle}">
+   <content>
+    <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
+    <mvc:XMLView viewName="sap.ui.demo.walkthrough.view.InvoiceList"/>
+   </content>
+   </Page>
+   </pages>
+   </App>
+   </Shell>
+</mvc:View>
+
+<!--
+   controllerName을 통해(이는 컨트롤러에서 정의한 이름이다.) 컨트롤러를 참조한다는 것을 설명하고, 이를 통해 컨트롤러에서 button태그에 있는 onShowHello가 트리거가 되어 함수가 실행되도록 한다.
+-->
+
+<!-- app 구조에 대한 모든 작업이 끝나고 app화면을 개선할 차례이다. 여기서는 컨트롤의 묶음(aggregations)에 대해서 알아보겠다.
+sap.m 에서 참조하는 태그들 App->pages ->Page-> content가 서로 묶어 줄 수 있는 컨트롤인데, content태그로 묶을 때 view에 직접적으로 보여지는 것을 항상 Panel컨트롤을 명시적으로 선언해주는게 좋다.
+생략이 가능하지만 view를 읽는데 힘들게 한다. -->
+
+<!-- Shell 컨트롤은 응용 프로그램의 루트 요소로 사용할 수 있습니다. 
+앱 또는 SplitApp 컨트롤을 포함할 수 있습니다. 
+셸은 전체 응용 프로그램에 대한 몇 가지 중요한 기능을 제공하고 데스크톱 브라우저 플랫폼에서 앱 주위의 프레임과 같은 시각적 적응을 처리합니다. -->
+
+<!-- 
+기존에 있던 Panel태그를 HelloPanel.view.xml 파일을 만들어 옮기고, HelloPanel.view.xml에 Panel태그와 더불어 HelloPanel.controller.js 파일을 찾을 수 있는 controllerName을
+작성한다. 따라서 HelloPanel컨트롤러가 HellPanel.view.xml을 관리한다.
+App.view.xml에서 XMLView 태그를 통해 HelloPanel.view.xml을 불러오는 역할만 한다.
+
+-->
