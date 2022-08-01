@@ -1,0 +1,21 @@
+<mvc:View
+	controllerName="sap.ui.demo.walkthrough.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:wt="sap.ui.demo.walkthrough.control">
+	<Page
+		title="{i18n>detailPageTitle}"
+		showNavButton="true"
+		navButtonPress=".onNavBack">
+		<ObjectHeader
+			intro="{invoice>ShipperName}"
+			title="{invoice>ProductName}"/>
+		<wt:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange"/>	
+	</Page>
+</mvc:View>
+
+
+<!-- 이제 detail정보 페이지로 이동하여 invoice를 표시 할 수 있지만 overview 페이지로 돌아갈 수 없었다.
+detail 정보 페이지에 back 버튼을 추가하고 overview 페이지를 다시 표시하는 기능을 구현한다 -->
+
+<!-- showNavButton="true"로 하면 back단추를 표시하고, 뒤로 단추를 누를 때 onNavBack이벤트가 발생하도록 Detail컨트롤에 지시한다. -->
